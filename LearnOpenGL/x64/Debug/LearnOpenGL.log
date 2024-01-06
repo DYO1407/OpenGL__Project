@@ -1,0 +1,6 @@
+﻿  main.cpp
+x64\Debug\glad.obj : warning LNK4042: Objekt mehrmals angegeben; zusätzliche Objekte werden ignoriert.
+x64\Debug\glm.obj : warning LNK4042: Objekt mehrmals angegeben; zusätzliche Objekte werden ignoriert.
+x64\Debug\main.obj : warning LNK4042: Objekt mehrmals angegeben; zusätzliche Objekte werden ignoriert.
+LINK : warning LNK4098: Standardbibliothek "MSVCRT" steht in Konflikt mit anderen Bibliotheken; /NODEFAULTLIB:Bibliothek verwenden.
+  LearnOpenGL.vcxproj -> C:\Users\deyaa\Demo_OpenGl\x64\Debug\LearnOpenGL.exe
