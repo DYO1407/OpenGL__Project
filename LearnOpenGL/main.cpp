@@ -14,6 +14,9 @@
 
 using namespace std;
 
+
+// try to fix something  
+
 // Vertex Shader Source 
 const char* vertexShaderSource = "#version 330 core\n"
 "layout (location = 0) in vec3 aPos;\n" // input of the vertex Shader (position)
