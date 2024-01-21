@@ -24,6 +24,9 @@
     <ClCompile Include="dependencies\Include\glm\detail\glm.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="stb_image.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dependencies\Include\glad\glad.h">
@@ -1133,6 +1136,21 @@
     <ClInclude Include="dependencies\Include\assimp\ZipArchiveIOSystem.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="shader.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Camerar.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="dependencies\lib\glfw3.lib" />
@@ -1147,6 +1165,10 @@
     <Text Include="x64\Debug\LearnOpenGL.Build.CppClean.log" />
     <Text Include="x64\Debug\LearnOpenGL.log" />
     <Text Include="x64\Debug\LearnOpenGL.vcxproj.FileListAbsolute.txt" />
+    <Text Include="3.3.shader.fs" />
+    <Text Include="3.3.shader.vs" />
+    <Text Include="resources\models\backpack\source_attribution.txt" />
+    <Text Include="resources\models\bugatti\README.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="x64\Debug\LearnOpenGL.exe.recipe" />
@@ -1598,5 +1620,238 @@
     <None Include="dependencies\Include\assimp\config.h.in" />
     <None Include="x64\Debug\LearnOpenGL.tlog\link.50756.read.1.tlog" />
     <None Include="x64\Debug\LearnOpenGL.tlog\link.50756-rc.write.1.tlog" />
+    <None Include="shaders\model_loading.fs" />
+    <None Include="shaders\model_loading.vs" />
+    <None Include="resources\models\backpack\backpack.mtl" />
+    <None Include="resources\models\hammer\valhalla_hammer.mtl" />
+    <None Include="resources\models\sportsCar\sportsCar.mtl" />
+    <None Include="resources\models\salle_de_bain\salle_de_bain.mtl" />
+    <None Include="resources\models\living_room\living_room.mtl" />
+    <None Include="resources\models\bugatti\bugatti.blend" />
+    <None Include="resources\models\bugatti\bugatti.mtl" />
+    <None Include="resources\models\85-cottage_obj\cottage_obj.mtl" />
+    <None Include="resources\models\war_ship\war_shipobj.mtl" />
+    <None Include="resources\models\OldChevroletCamaro\Model\LowPolyOldCamaro.3ds" />
+    <None Include="resources\models\OldChevroletCamaro\Model\LowPolyOldCamaro.fbx" />
+    <None Include="resources\models\OldChevroletCamaro\Model\LowPolyOldCamaro.mtl" />
+    <None Include="resources\models\OldChevroletCamaro\Model\LowPolyOldCamaro.ply" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\models\backpack\ao.jpg">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\backpack\diffuse.jpg">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\backpack\normal.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\backpack\roughness.jpg">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\backpack\specular.jpg">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\backpack\backpack.obj" />
+    <Image Include="textures\brick.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="textures\container.jpg">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="textures\awesomeface.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\hammer\Hammer_BaseColor.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\hammer\Handle_BaseColor.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\hammer\Handle_down_BaseColor.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\hammer\Winding_BaseColor.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\hammer\Valhalla_hammer.obj" />
+    <Image Include="resources\models\sportsCar\sportsCar.obj" />
+    <Image Include="resources\models\salle_de_bain\salle_de_bain.obj" />
+    <Image Include="resources\models\salle_de_bain\textures\Label_BaseColor.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\salle_de_bain\textures\Wood_BaseColor.jpg">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\salle_de_bain\textures\WoodFloor_BaseColor.jpg">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\salle_de_bain\textures\WoodPanel.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\living_room\textures\apple.jpg">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\living_room\textures\book-spines.jpg">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\living_room\textures\carpet-text3b.jpg">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\living_room\textures\cushion-green-circles.jpg">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\living_room\textures\cushion-purple-yellow-stripe.jpg">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\living_room\textures\cushion-stripe-purple.jpg">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\living_room\textures\pic5wide.jpg">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\living_room\textures\picture11-vert.jpg">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\living_room\textures\Shade-paper.jpg">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\living_room\textures\shade-stripes.jpg">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\living_room\textures\wood4.jpg">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\living_room\living_room.obj" />
+    <Image Include="resources\models\bugatti\bugatti.obj" />
+    <Image Include="resources\models\85-cottage_obj\cottage_obj.obj" />
+    <Image Include="resources\models\85-cottage_obj\cottage_textures\cottage_diffuse.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\85-cottage_obj\cottage_textures\cottage_normal.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\war_ship\textures\cdp_body_Glossiness.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\war_ship\textures\cdp_body_Mixed_AO.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\war_ship\textures\cdp_body_normal.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\war_ship\textures\cdp_body_Specular.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\war_ship\textures\cdp_metal_Diffuse.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\war_ship\textures\cdp_metal_Glossiness.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\war_ship\textures\cdp_metal_Specular.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\war_ship\textures\cdp_plastic_Diffuse.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\war_ship\textures\cdp_plastic_Specular.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\war_ship\textures\shadow.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\war_ship\textures\white_light_Emissive.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\war_ship\war_shipobj.obj" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Camaro_AmbientOclussion.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Camaro_Base_Color.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Camaro_Metallic.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Camaro_Normal_.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Camaro_Roughness.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Cap_Base_Color.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Cap_Metallic.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Cap_Mixed_AO.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Cap_Normal_OpenGL.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Cap_Roughness.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Glass_Base_Color.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Glass_Metallic.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Glass_Mixed_AO.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Glass_Normal_OpenGL.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Glass_Opacity.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Glass_Roughness.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Interior_Base_Color.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Interior_Mixed_AO.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Interior_Metallic.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Interior_Normal_OpenGL.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Interior_Roughness.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\internal_ground_ao_texture.jpeg">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Lights_base.jpeg">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Lights_Normal.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Metal_Base_Color.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Metal_Metallic.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Metal_Mixed_AO.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Metal_Normal_OpenGL.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Metal_Roughness.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Model\LowPolyOldCamaro.obj" />
   </ItemGroup>
 </Project>

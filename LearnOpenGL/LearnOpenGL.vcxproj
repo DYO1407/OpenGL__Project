@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -136,8 +136,10 @@
     <ClCompile Include="dependencies\Include\glm\detail\glm.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camerar.h" />
     <ClInclude Include="dependencies\Include\assimp\aabb.h" />
     <ClInclude Include="dependencies\Include\assimp\ai_assert.h" />
     <ClInclude Include="dependencies\Include\assimp\anim.h" />
@@ -507,17 +509,153 @@
     <ClInclude Include="dependencies\Include\glm\vec4.hpp" />
     <ClInclude Include="dependencies\Include\glm\vector_relational.hpp" />
     <ClInclude Include="dependencies\Include\KHR\khrplatform.h" />
+    <ClInclude Include="Mesh.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="shader.h" />
+    <ClInclude Include="stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="dependencies\lib\assimp-vc143-mtd.lib" />
     <Library Include="dependencies\lib\glfw3.lib" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="resources\models\85-cottage_obj\cottage_textures\cottage_diffuse.png" />
+    <Image Include="resources\models\85-cottage_obj\cottage_textures\cottage_normal.png" />
+    <Image Include="resources\models\backpack\backpack.obj">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Ja/Nein</DeploymentContent>
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Ja/Nein</DeploymentContent>
+    </Image>
+    <Image Include="resources\models\hammer\Hammer_BaseColor.png" />
+    <Image Include="resources\models\hammer\Handle_BaseColor.png" />
+    <Image Include="resources\models\hammer\Handle_down_BaseColor.png" />
+    <Image Include="resources\models\hammer\Winding_BaseColor.png" />
+    <Image Include="resources\models\living_room\textures\apple.jpg" />
+    <Image Include="resources\models\living_room\textures\book-spines.jpg" />
+    <Image Include="resources\models\living_room\textures\carpet-text3b.jpg" />
+    <Image Include="resources\models\living_room\textures\cushion-green-circles.jpg" />
+    <Image Include="resources\models\living_room\textures\cushion-purple-yellow-stripe.jpg" />
+    <Image Include="resources\models\living_room\textures\cushion-stripe-purple.jpg" />
+    <Image Include="resources\models\living_room\textures\pic5wide.jpg" />
+    <Image Include="resources\models\living_room\textures\picture11-vert.jpg" />
+    <Image Include="resources\models\living_room\textures\Shade-paper.jpg" />
+    <Image Include="resources\models\living_room\textures\shade-stripes.jpg" />
+    <Image Include="resources\models\living_room\textures\wood4.jpg" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Camaro_AmbientOclussion.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Camaro_Base_Color.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Camaro_Metallic.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Camaro_Normal_.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Camaro_Roughness.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Cap_Base_Color.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Cap_Metallic.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Cap_Mixed_AO.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Cap_Normal_OpenGL.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Cap_Roughness.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Glass_Base_Color.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Glass_Metallic.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Glass_Mixed_AO.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Glass_Normal_OpenGL.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Glass_Opacity.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Glass_Roughness.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Interior_Base_Color.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Interior_Metallic.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Interior_Mixed_AO.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Interior_Normal_OpenGL.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Interior_Roughness.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\internal_ground_ao_texture.jpeg" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Lights_base.jpeg" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Lights_Normal.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Metal_Base_Color.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Metal_Metallic.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Metal_Mixed_AO.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Metal_Normal_OpenGL.png" />
+    <Image Include="resources\models\OldChevroletCamaro\Textures\Metal_Roughness.png" />
+    <Image Include="resources\models\salle_de_bain\textures\Label_BaseColor.png" />
+    <Image Include="resources\models\salle_de_bain\textures\WoodFloor_BaseColor.jpg" />
+    <Image Include="resources\models\salle_de_bain\textures\WoodPanel.png" />
+    <Image Include="resources\models\salle_de_bain\textures\Wood_BaseColor.jpg" />
+    <Image Include="resources\models\war_ship\textures\cdp_body_Glossiness.png" />
+    <Image Include="resources\models\war_ship\textures\cdp_body_Mixed_AO.png" />
+    <Image Include="resources\models\war_ship\textures\cdp_body_normal.png" />
+    <Image Include="resources\models\war_ship\textures\cdp_body_Specular.png" />
+    <Image Include="resources\models\war_ship\textures\cdp_metal_Diffuse.png" />
+    <Image Include="resources\models\war_ship\textures\cdp_metal_Glossiness.png" />
+    <Image Include="resources\models\war_ship\textures\cdp_metal_Specular.png" />
+    <Image Include="resources\models\war_ship\textures\cdp_plastic_Diffuse.png" />
+    <Image Include="resources\models\war_ship\textures\cdp_plastic_Specular.png" />
+    <Image Include="resources\models\war_ship\textures\shadow.png" />
+    <Image Include="resources\models\war_ship\textures\white_light_Emissive.png" />
+    <Image Include="textures\awesomeface.png" />
+    <Image Include="textures\brick.png" />
+    <Image Include="textures\container.jpg">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </DeploymentContent>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </DeploymentContent>
+    </Image>
+    <Image Include="resources\models\hammer\valhalla_hammer.obj">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Yes</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Yes/No</DeploymentContent>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Yes</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Yes/No</DeploymentContent>
+    </Image>
+    <Image Include="resources\models\sportsCar\sportsCar.obj">
+      <FileType>Document</FileType>
+    </Image>
+    <Image Include="resources\models\salle_de_bain\salle_de_bain.obj">
+      <FileType>Document</FileType>
+    </Image>
+    <Image Include="resources\models\living_room\living_room.obj">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Yes</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Yes/No</DeploymentContent>
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Yes</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Yes/No</DeploymentContent>
+    </Image>
+    <Image Include="resources\models\bugatti\bugatti.obj">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Ja/Nein</DeploymentContent>
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Ja/Nein</DeploymentContent>
+    </Image>
+    <Image Include="resources\models\85-cottage_obj\cottage_obj.obj">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
+    </Image>
+    <Image Include="resources\models\war_ship\war_shipobj.obj">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
+    </Image>
+    <Image Include="resources\models\OldChevroletCamaro\Model\LowPolyOldCamaro.obj">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
+    </Image>
     <Object Include="x64\Debug\glad.obj" />
     <Object Include="x64\Debug\glm.obj" />
     <Object Include="x64\Debug\main.obj" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="3.3.shader.fs" />
+    <Text Include="3.3.shader.vs" />
+    <Text Include="resources\models\backpack\source_attribution.txt" />
+    <Text Include="resources\models\bugatti\README.txt" />
     <Text Include="x64\Debug\LearnOpenGL.Build.CppClean.log" />
     <Text Include="x64\Debug\LearnOpenGL.log" />
     <Text Include="x64\Debug\LearnOpenGL.vcxproj.FileListAbsolute.txt" />
@@ -670,6 +808,21 @@
     <None Include="dependencies\Include\glm\gtx\vector_angle.inl" />
     <None Include="dependencies\Include\glm\gtx\vector_query.inl" />
     <None Include="dependencies\Include\glm\gtx\wrap.inl" />
+    <None Include="resources\models\85-cottage_obj\cottage_obj.mtl" />
+    <None Include="resources\models\backpack\backpack.mtl" />
+    <None Include="resources\models\bugatti\bugatti.blend" />
+    <None Include="resources\models\bugatti\bugatti.mtl" />
+    <None Include="resources\models\hammer\valhalla_hammer.mtl" />
+    <None Include="resources\models\living_room\living_room.mtl" />
+    <None Include="resources\models\OldChevroletCamaro\Model\LowPolyOldCamaro.3ds" />
+    <None Include="resources\models\OldChevroletCamaro\Model\LowPolyOldCamaro.fbx" />
+    <None Include="resources\models\OldChevroletCamaro\Model\LowPolyOldCamaro.mtl" />
+    <None Include="resources\models\OldChevroletCamaro\Model\LowPolyOldCamaro.ply" />
+    <None Include="resources\models\salle_de_bain\salle_de_bain.mtl" />
+    <None Include="resources\models\sportsCar\sportsCar.mtl" />
+    <None Include="resources\models\war_ship\war_shipobj.mtl" />
+    <None Include="shaders\model_loading.fs" />
+    <None Include="shaders\model_loading.vs" />
     <None Include="x64\Debug\LearnOpenGL.exe.recipe" />
     <None Include="x64\Debug\LearnOpenGL.ilk" />
     <None Include="x64\Debug\LearnOpenGL.tlog\CL.command.1.tlog" />
@@ -684,6 +837,13 @@
     <None Include="x64\Debug\LearnOpenGL.tlog\link.write.1.tlog" />
     <None Include="x64\Debug\vc143.idb" />
     <None Include="x64\Debug\vc143.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\models\backpack\ao.jpg" />
+    <Image Include="resources\models\backpack\diffuse.jpg" />
+    <Image Include="resources\models\backpack\normal.png" />
+    <Image Include="resources\models\backpack\roughness.jpg" />
+    <Image Include="resources\models\backpack\specular.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
