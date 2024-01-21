@@ -1,9 +1,17 @@
-﻿  main.cpp
-C:\Users\deyaa\Demo_OpenGl\LearnOpenGL\Mesh.h(62,50): warning C4267: "Argument": Konvertierung von "size_t" nach "GLsizei", Datenverlust möglich
+﻿  glm.cpp
+  main.cpp
+C:\Users\deyaa\source\repos\OpenGL__Project\LearnOpenGL\Mesh.h(62,50): warning C4267: "Argument": Konvertierung von "size_t" nach "GLsizei", Datenverlust möglich
   (Quelldatei „main.cpp“ wird kompiliert)
   
-C:\Users\deyaa\Demo_OpenGl\LearnOpenGL\main.cpp(550,41): warning C4305: "Argument": Verkürzung von "double" in "float"
-C:\Users\deyaa\Demo_OpenGl\LearnOpenGL\main.cpp(552,42): warning C4305: "Argument": Verkürzung von "double" in "float"
-C:\Users\deyaa\Demo_OpenGl\LearnOpenGL\main.cpp(554,38): warning C4305: "Argument": Verkürzung von "double" in "float"
-C:\Users\deyaa\Demo_OpenGl\LearnOpenGL\main.cpp(556,39): warning C4305: "Argument": Verkürzung von "double" in "float"
-  LearnOpenGL.vcxproj -> C:\Users\deyaa\Demo_OpenGl\x64\Debug\LearnOpenGL.exe
+C:\Users\deyaa\source\repos\OpenGL__Project\LearnOpenGL\main.cpp(550,41): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\deyaa\source\repos\OpenGL__Project\LearnOpenGL\main.cpp(552,42): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\deyaa\source\repos\OpenGL__Project\LearnOpenGL\main.cpp(554,38): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\deyaa\source\repos\OpenGL__Project\LearnOpenGL\main.cpp(556,39): warning C4305: "Argument": Verkürzung von "double" in "float"
+  stb_image.cpp
+  Code wird generiert...
+  glad.c
+x64\Debug\glad.obj : warning LNK4042: Objekt mehrmals angegeben; zusätzliche Objekte werden ignoriert.
+x64\Debug\glm.obj : warning LNK4042: Objekt mehrmals angegeben; zusätzliche Objekte werden ignoriert.
+x64\Debug\main.obj : warning LNK4042: Objekt mehrmals angegeben; zusätzliche Objekte werden ignoriert.
+LINK : warning LNK4098: Standardbibliothek "MSVCRT" steht in Konflikt mit anderen Bibliotheken; /NODEFAULTLIB:Bibliothek verwenden.
+  LearnOpenGL.vcxproj -> C:\Users\deyaa\source\repos\OpenGL__Project\x64\Debug\LearnOpenGL.exe

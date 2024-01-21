@@ -101,7 +101,7 @@ int main(void)
 
     // load models
     // -----------
-    Model ourModel(("resources/models/OldChevroletCamaro/Model/LowPolyOldCamaro.obj"));
+    Model ourModel(("resources/models/backpack/backpack.obj"));
 
 
     float vertices[] = {
